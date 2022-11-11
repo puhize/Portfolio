@@ -1,10 +1,112 @@
-body
-{
+body,
+html {
     margin: 0;
     padding: 0;
     background-color: #fff;
+    background-size: 100%;
     line-height: 1.5;
-    overflow: auto; 
+    overflow: auto;
     scroll-behavior: smooth;
     font-family: 'Share Tech Mono', monospace;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgb(93, 104, 136);
+    display: block;
+
+}
+
+.nav li {
+    padding: 5px;
+    display: inline;
+}
+
+.nav li a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.switch-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    top: 8px;
+    right: 30px;
+}
+
+.switch-wrapper .moon,
+.switch-wrapper .sun {
+    width: 17px;
+    height: 17px;
+}
+
+.switch-wrapper .sun {
+    background: url(images/sun.png) no-repeat center;
+    background-size: 100%;
+}
+
+.switch-wrapper .moon {
+    background: url(images/moon.png) no-repeat center;
+    background-size: 100%;
+}
+
+.switch-wrapper .toggle-wrapper {
+    margin: 10px;
+}
+
+.switch-wrapper .toggle-wrapper #switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.switch-wrapper .toggle-wrapper input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.switch-wrapper .toggle-wrapper label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 45px;
+    height: 25px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switch-wrapper .toggle-wrapper label:after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    width: 20px;
+    height: 22px;
+    background: #fff;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.switch-wrapper .toggle-wrapper input:checked+label {
+    background: #30394d;
+}
+
+.switch-wrapper .toggle-wrapper input:checked+label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+
+.switch-wrapper .toggle-wrapper label:active:after {
+    width: 0px;
 }
