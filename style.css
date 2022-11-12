@@ -3,7 +3,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    height: 100%;
+    background-size: 100%;
     line-height: 1.5;
     overflow: auto;
     scroll-behavior: smooth;
@@ -19,18 +19,26 @@ html.night {
 
 header {
     position: fixed;
-    width: 100%;
-    top: 0;
+    height: max-content;
+    width: 100%; 
+    top: 0px;
     background-color: rgba(1, 2, 59, 0.712);
     display: block;
 }
 
-.nav li {
+.nav-el{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    margin: 0;
+
+}
+.nav-el li {
     padding: 5px;
     display: inline;
 }
 
-.nav li a {
+.nav-el li a {
     padding: 10px;
     text-decoration: none;
     color: white;
@@ -45,7 +53,7 @@ header {
     -webkit-box-align: center;
     align-items: center;
     position: fixed;
-    top: 8px;
+    top: 5px;
     right: 30px;
 }
 
@@ -128,4 +136,188 @@ html.night .switch-wrapper .moon {
 
 .switch-wrapper .toggle-wrapper label:active:after {
     width: 0px;
+}
+
+.intro {
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.intro_text {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.intro_hello .wave-hand.animated {
+    position: relative;
+    animation: wave 2.0s linear;
+}
+
+.intro_hello .wave-hand {
+    background-image: url(images/waving-hand.png);
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.intro_hello .emoji {
+    width: 40px;
+    height: 40px;
+}
+
+.content{
+    margin-top: 60px;
+    font-size: 2rem;
+}
+ .container{
+     margin-top: 30px;
+} 
+
+body .emoji,
+html .emoji {
+    display: inline-block;
+    vertical-align: text-top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.name{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.myname {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-decoration: none;
+    display: inline-block;
+    animation: .8s shake alternate;
+}
+
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    /*10%{transform: rotate(90deg);}*/
+    20% {
+        transform: rotate(90deg);
+    }
+
+    /*30%{transform: rotate(90deg);}*/
+    40% {
+        transform: rotate(15deg);
+    }
+
+    /*50% {transform: rotate(90deg);}*/
+    60% {
+        transform: rotate(90deg);
+    }
+
+    /*70%{transform: rotate(90deg);}*/
+    80% {
+        transform: rotate(15deg);
+    }
+
+    /*90% {transform: rotate(90deg);}*/
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    /*10%{transform: rotate(90deg);}*/
+    20% {
+        transform: rotate(90deg);
+    }
+
+    /*30%{transform: rotate(90deg);}*/
+    40% {
+        transform: rotate(15deg);
+    }
+
+    /*50% {transform: rotate(90deg);}*/
+    60% {
+        transform: rotate(90deg);
+    }
+
+    /*70%{transform: rotate(90deg);}*/
+    80% {
+        transform: rotate(15deg);
+    }
+
+    /*90% {transform: rotate(90deg);}*/
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: skewX(-15deg);
+    }
+
+    5% {
+        transform: skewX(15deg);
+    }
+
+    10% {
+        transform: skewX(-15deg);
+    }
+
+    15% {
+        transform: skewX(15deg);
+    }
+
+    20% {
+        transform: skewX(0deg);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@-webkit-keyframes shake {
+    0% {
+        transform: skewX(-15deg);
+    }
+
+    5% {
+        transform: skewX(15deg);
+    }
+
+    10% {
+        transform: skewX(-15deg);
+    }
+
+    15% {
+        transform: skewX(15deg);
+    }
+
+    20% {
+        transform: skewX(0deg);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body .intro {
+        padding: 100px 35px;
+        line-height: 1.5;
+    }
 }
