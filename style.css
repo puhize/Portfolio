@@ -19,19 +19,20 @@ html.night {
 
 header {
     height: max-content;
-    width: 100%; 
+    width: 100%;
     top: 0px;
     background-color: rgba(1, 2, 59, 0.712);
     display: block;
 }
 
-.nav-el{
+.nav-el {
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
     margin: 0;
 
 }
+
 .nav-el li {
     padding: 5px;
     display: inline;
@@ -83,7 +84,6 @@ html.night .switch-wrapper .moon {
     background: url(images/white-moon.png) no-repeat center;
     background-size: 100%;
 }
-
 
 .switch-wrapper .toggle-wrapper {
     margin: 10px;
@@ -156,7 +156,7 @@ html.night .switch-wrapper .moon {
     flex-direction: column;
 }
 
-.intro_figure{
+.intro_figure {
     width: 50%;
 }
 
@@ -177,13 +177,14 @@ html.night .switch-wrapper .moon {
     height: 40px;
 }
 
-.content{
+.content {
     margin-top: 60px;
     font-size: 1.5rem;
 }
- .container{
-     margin-top: 30px;
-} 
+
+.container {
+    margin-top: 30px;
+}
 
 body .emoji,
 html .emoji {
@@ -194,7 +195,7 @@ html .emoji {
     background-position: center;
 }
 
-.name{
+.name {
     font-size: 2rem;
     padding-left: 10px;
 }
@@ -238,8 +239,8 @@ body .section_content,
 html .section_content {
     font-weight: bolder;
     font-size: 1.1rem;
-     width: 100%;
-     max-width: 650px; 
+    width: 100%;
+    max-width: 650px;
 }
 
 body .section_content p,
@@ -249,9 +250,16 @@ html .section_content p {
 }
 
 body .section_content .underline-link,
-html .section_content .underline-link {
+html .section_content .underline-link{
     position: relative;
     display: inline-block;
+    text-decoration: none;
+}
+
+body .section_content .underline-link:hover,
+html .section_content .underline-link:hover{
+    text-decoration: underline;
+    color: #85054b;
 }
 
 .skills {
@@ -271,7 +279,6 @@ html .section_content .underline-link {
 }
 
 .card-preview-img {
-    max-width: 100%;
     border-radius: 10px 10px 0 0;
     padding: 5px;
     background-color: white;
@@ -306,20 +313,9 @@ html .section_content .underline-link {
     flex-wrap: nowrap;
 }
 
-.project-links a i {
-    padding: 5px;
-}
-
-.project-links a i {
-    color: #F08CAE;
-    font-size: 1.2em;
+.project-links a img {
     transition: all 0.2s ease;
-}
-
-.project-links a i:hover {
-    font-size: 1.25em;
-    padding: 2px 5px;
-    color: #7EB77F;
+    width: 50px;
 }
 
 .project-links a:last-child {
@@ -347,10 +343,101 @@ html .section_content .underline-link {
     color: #1D263B;
 }
 
-@media only screen and (min-width: 768px) {
-    .project-cards-container {
-        column-count: 2;
-        column-gap: 2em;
+#loading {
+    height: 100px;
+    display: flexbox;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+.rect {
+    fill: none;
+    stroke-width: 8px;
+    stroke: black;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 50%;
+    -webkit-animation: movedash 1.5s forwards 0s infinite;
+    animation: movedash 1.5s forwards 0s infinite;
+}
+
+.globload .text {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #0055af;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+}
+
+.footer {
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 730px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.footer_copyright .emoji {
+    width: 20px;
+    height: 20px;
+}
+
+.footer_links a {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    color: #007bff !important;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 15px;
+    outline: 0;
+}
+
+.footer_links a .text {
+    font-size: .9rem;
+    display: inline;
+    letter-spacing: 1px;
+}
+
+.footer_links a:hover {
+    text-decoration: underline;
+}
+
+ .footer_links img {
+    display: inline-block;
+    width: 15px;
+}
+
+body #top-button, html #top-button {
+    background: 0 0;
+    border: none;
+    outline: 0;
+    width: 55px;
+    position: fixed;
+    bottom: 25px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    scroll-behavior: smooth;   
+}
+
+body #top-button img, html #top-button img {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+@-webkit-keyframes movedash {
+    to {
+        stroke-dashoffset: 250%;
+    }
+}
+
+@keyframes movedash {
+    to {
+        stroke-dashoffset: 250%;
     }
 }
 
@@ -359,27 +446,22 @@ html .section_content .underline-link {
         transform: rotate(0deg);
     }
 
-    /*10%{transform: rotate(90deg);}*/
     20% {
         transform: rotate(90deg);
     }
 
-    /*30%{transform: rotate(90deg);}*/
     40% {
         transform: rotate(15deg);
     }
 
-    /*50% {transform: rotate(90deg);}*/
     60% {
         transform: rotate(90deg);
     }
 
-    /*70%{transform: rotate(90deg);}*/
     80% {
         transform: rotate(15deg);
     }
 
-    /*90% {transform: rotate(90deg);}*/
     100% {
         transform: rotate(0deg);
     }
@@ -390,27 +472,22 @@ html .section_content .underline-link {
         transform: rotate(0deg);
     }
 
-    /*10%{transform: rotate(90deg);}*/
     20% {
         transform: rotate(90deg);
     }
 
-    /*30%{transform: rotate(90deg);}*/
     40% {
         transform: rotate(15deg);
     }
 
-    /*50% {transform: rotate(90deg);}*/
     60% {
         transform: rotate(90deg);
     }
 
-    /*70%{transform: rotate(90deg);}*/
     80% {
         transform: rotate(15deg);
     }
 
-    /*90% {transform: rotate(90deg);}*/
     100% {
         transform: rotate(0deg);
     }
@@ -468,30 +545,42 @@ html .section_content .underline-link {
     }
 }
 
-@media screen and (max-width: 800px)
-{
-   .intro{
-    display: flex;
-    flex-direction: column;
-   }
+@media screen and (max-width: 800px) {
+    .intro {
+        display: flex;
+        flex-direction: column;
+    }
 
-   .section_background{
-    display: flex;
-    flex-direction: column;
-   }
+    .section_background {
+        display: flex;
+        flex-direction: column;
+    }
 
-   .section_skills{
-    display: flex;
-    flex-direction: column;
-   }
+    .section_skills {
+        display: flex;
+        flex-direction: column;
+    }
 
-   .section_content .skills{
-    display: flex;
-    flex-direction: column;
-   }
+    .section-projects {
+        display: flex;
+        flex-direction: column;
+    }
 
-   .content .container {
-    padding: 0px 30px 0px 30px;
+    .section_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .container {
+        padding: 0px 30px 0px 30px;
+    }
+
 }
-   
+
+
+@media only screen and (min-width: 768px) {
+    .project-cards-container {
+        column-count: 2;
+        column-gap: 2em;
+    }
 }
